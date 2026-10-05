@@ -1,0 +1,11 @@
+{
+  "source": "sample.md",
+  "host": "../host-template.docx",
+  "out": "output/sample_{version}.docx",
+  "body_starts_at": "Introduction",
+  "drop_title": true,
+  "heading_shift": -1,
+  "strip_heading_numbers": true,
+  "drop_note_after_title": true,
+  "flatten_links": true
+}

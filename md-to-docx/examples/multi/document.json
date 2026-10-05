@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "01-context.md",
+    { "path": "02-design-overview.md", "insert_before": "# Design", "drop_title": true },
+    { "path": "02-design-details.md", "drop_title": true }
+  ],
+  "host": "../host-template.docx",
+  "out": "output/document.docx",
+  "strip_heading_numbers": true
+}

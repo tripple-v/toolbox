@@ -1,0 +1,3 @@
+markdown-it-py>=4.0
+# Pillow is optional; only needed for image formats other than PNG and JPEG.
+Pillow>=10.0

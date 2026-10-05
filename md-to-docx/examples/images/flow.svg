@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="120" viewBox="0 0 560 120" font-family="Arial" font-size="14">
+  <rect width="560" height="120" fill="#ffffff"/>
+  <g fill="#eaf0fa" stroke="#1f3864" stroke-width="1.5">
+    <rect x="20" y="35" width="140" height="50" rx="6"/>
+    <rect x="210" y="35" width="140" height="50" rx="6"/>
+    <rect x="400" y="35" width="140" height="50" rx="6"/>
+  </g>
+  <g fill="#1f3864" text-anchor="middle">
+    <text x="90" y="65">Markdown</text>
+    <text x="280" y="65">Converter</text>
+    <text x="470" y="65">Word document</text>
+  </g>
+  <g stroke="#1f3864" stroke-width="1.5" fill="none">
+    <path d="M160 60 H204"/><path d="M350 60 H394"/>
+    <path d="M198 55 L206 60 L198 65"/><path d="M388 55 L396 60 L388 65"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+__pycache__/
+.DS_Store
+~$*
+
+# md-to-docx: generated documents and working copies
+output/
+*_work/
+work/
+
+# openapi-to-html: generated pages
+openapi-to-html/*.html
