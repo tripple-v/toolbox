@@ -8,6 +8,7 @@ Small, self-contained tools for everyday technical work. Each tool lives in its 
 | --- | --- |
 | [md-to-docx](./md-to-docx/README.md) | Builds a Word document from Markdown files, with the look of an existing Word template |
 | [openapi-to-html](./openapi-to-html/README.md) | Turns an OpenAPI file into a single HTML page that opens in any browser, without a network connection |
+| [puml-to-image](./puml-to-image/README.md) | Renders PlantUML files to PNG or SVG images locally |
 
 ## Adding a tool
 
