@@ -5,16 +5,17 @@ Turns an OpenAPI file into a single HTML page that opens in any browser, without
 ## Use
 
 ```bash
-python3 build_openapi_html.py path/to/api.openapi.yaml [output.html]
+python build_openapi_html.py path/to/api.openapi.yaml [output.html]
 ```
 
-Without a second argument, the page is written next to the OpenAPI file, with the `.html` extension.
+Without a second argument, the page is written next to the OpenAPI file, with the `.html` extension. On macOS and Linux, use `python3` if `python` is not defined.
 
 ## What you need
 
 - **Python 3.9 or later**, no extra package
 - **Node.js**, for the `npx` command
 - **a network connection while the page is built**
+- On Windows, the script runs under Git Bash with the python.org installer and Node.js from https://nodejs.org (or `choco install nodejs-lts` from a PowerShell window opened as administrator).
 
 ## How it works
 

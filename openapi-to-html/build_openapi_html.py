@@ -2,7 +2,7 @@
 """Build a single, self-contained HTML page from an OpenAPI document, readable
 in any browser without a network connection.
 
-    python3 build_openapi_html.py path/to/contract.openapi.yaml [output.html]
+    python build_openapi_html.py path/to/contract.openapi.yaml [output.html]
 
 Two steps:
   1. the Redocly command-line tool renders the OpenAPI document as an HTML page
