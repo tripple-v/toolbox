@@ -171,6 +171,9 @@ class Stager:
             name = f"{src.stem}_{n}{suffix}"
         dest = self.images_dir / name
         if src.suffix.lower() == ".svg":
+            if shutil.which("rsvg-convert") is None:
+                sys.exit(f"rsvg-convert is not installed or not on the PATH; it is needed to convert {src.name}. "
+                         "Install it (see the README, section 1) or use PNG or JPEG images.")
             subprocess.run(["rsvg-convert", "-o", str(dest), str(src)], check=True)
         else:
             shutil.copy2(src, dest)

@@ -25,15 +25,44 @@ You need:
 pip install -r requirements.txt
 ```
 
-To install rsvg-convert: `brew install librsvg` on macOS, `apt install librsvg2-bin` on Debian or Ubuntu, or the librsvg installer on Windows.
+To install rsvg-convert:
+
+- macOS: `brew install librsvg`
+- Debian or Ubuntu: `apt install librsvg2-bin`
+- Windows: see below
+
+The commands in this README use `python`. On macOS and Linux, use `python3` if `python` is not defined.
+
+### Windows with Git Bash
+
+The tool runs under Git Bash with the python.org installer. Four things differ from macOS and Linux:
+
+1. The command is `python`, not `python3`.
+2. Set UTF-8 before running, or accented characters in the Markdown can break the build:
+
+   ```bash
+   export PYTHONUTF8=1
+   ```
+
+   Add this line to `~/.bashrc` to make it permanent.
+3. Write Windows paths the Git Bash way and quote them when they contain spaces: `"/c/Users/me/My Documents/config.json"`.
+4. `rsvg-convert` has no official Windows installer. Install it with Chocolatey, from a PowerShell window opened as administrator:
+
+   ```powershell
+   choco install rsvg-convert
+   ```
+
+   Then open a new Git Bash window and check with `rsvg-convert --version`. Without Chocolatey, download the standalone binary from https://github.com/miyako/console-rsvg-convert, put `rsvg-convert.exe` in a folder of your own (for example `~/bin`) and add that folder to your PATH. You can skip this step if your Markdown has no SVG images.
+
+If `pip install -r requirements.txt` fails on Pillow, your Python version is more recent than the available Pillow wheels. Install only `pip install markdown-it-py`: Pillow is needed for image formats other than PNG, JPEG and SVG.
 
 ## 2. Try the examples
 
 From the current folder:
 
 ```bash
-python3 build_docx.py examples/single/sample.json
-python3 build_docx.py examples/multi/document.json
+python build_docx.py examples/single/sample.json
+python build_docx.py examples/multi/document.json
 ```
 
 Each command prints the path of the document it wrote, under `examples/.../output/`.
@@ -63,7 +92,7 @@ Two ways to get one:
 - **From an existing document.** If you already have a complete document written with the template:
 
   ```bash
-  python3 make_host_template.py --source existing-document.docx --out host-template.docx
+  python make_host_template.py --source existing-document.docx --out host-template.docx
   ```
 
   Everything after the table of contents is replaced by the two markers. The source document is not modified.
@@ -128,7 +157,7 @@ Several Markdown files, merged in order into one document:
 ### Step 4 - Build
 
 ```bash
-python3 build_docx.py path/to/my-config.json
+python build_docx.py path/to/my-config.json
 ```
 
 Open the result in Word, answer **Yes** to the field update question, and save.
@@ -252,7 +281,7 @@ To create the style in Word: open the host template, open the styles pane, choos
 | The table of contents is empty or out of date | Open the document in Word and answer **Yes** to the field update question, or select all and press F9 |
 | Text is not formatted as expected | The style identifier does not exist in the template. Declare the right one in the styles file (step 2) |
 | `images not found` | A path in `![...](...)` is wrong. Image paths are relative to the Markdown file that contains them |
-| `rsvg-convert` not found | Install it (section 1), or use PNG or JPEG images |
+| `rsvg-convert is not installed or not on the PATH` | Install it (section 1, Windows paragraph for Git Bash), or use PNG or JPEG images. On Windows, open a new Git Bash window after installing |
 | `warning: colwidths gives 2 value(s) for a table of 3 column(s)` | The marker must give one value per column. The table is built with equal columns |
 | `warning: internal block ... is never closed` | An `<!-- internal:start -->` has no matching `<!-- internal:end -->`. Everything after it was left out |
 | A marker appears as text in the document | It is not on a line of its own, or it has no empty line before and after |
